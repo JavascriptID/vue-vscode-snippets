@@ -20,6 +20,46 @@
     ],
     "description": "computed value"
   },
+  "Vue Lifecycle beforeCreate": {
+    "prefix": "vbeforecreate",
+    "body": ["beforeCreate () {", "\t${0};", "},"],
+    "description": "beforeCreate lifecycle method"
+  },
+  "Vue Lifecycle created": {
+    "prefix": "vcreated",
+    "body": ["created () {", "\t${0};", "},"],
+    "description": "created lifecycle method"
+  },
+  "Vue Lifecycle beforeMount": {
+    "prefix": "vbeforemount",
+    "body": ["beforeMount () {", "\t${0};", "},"],
+    "description": "beforeMount lifecycle method"
+  },
+  "Vue Lifecycle mounted": {
+    "prefix": "vmounted",
+    "body": ["mounted () {", "\t${0};", "},"],
+    "description": "mounted lifecycle method"
+  },
+  "Vue Lifecycle beforeUpdate": {
+    "prefix": "vbeforeupdate",
+    "body": ["beforeUpdate () {", "\t${0};", "},"],
+    "description": "beforeUpdate lifecycle method"
+  },
+  "Vue Lifecycle updated": {
+    "prefix": "vupdated",
+    "body": ["updated () {", "\t${0};", "},"],
+    "description": "updated lifecycle method"
+  },
+  "Vue Lifecycle beforeDestroy": {
+    "prefix": "vbeforedestroy",
+    "body": ["beforeDestroy () {", "\t${0};", "},"],
+    "description": "beforeDestroy lifecycle method"
+  },
+  "Vue Lifecycle destroyed": {
+    "prefix": "vdestroyed",
+    "body": ["destroyed () {", "\t${0};", "},"],
+    "description": "destroyed lifecycle method"
+  },
   "Vue Watchers": {
     "prefix": "vwatcher",
     "body": [
@@ -80,6 +120,66 @@
       "}"
     ],
     "description": "import a component and include it in export default"
+  },
+  "Vue MapState": {
+    "prefix": "vmapstate",
+    "body": [
+      "import { mapState } from 'vuex'",
+      "",
+      "export default {",
+      "\tcomputed: {",
+      "\t\t...mapState([",
+      "\t\t\t${1:'nameOfState'},",
+      "\t\t])",
+      "\t},",
+      "}"
+    ],
+    "description": "map getters inside a vue component"
+  },
+  "Vue MapGetters": {
+    "prefix": "vmapgetters",
+    "body": [
+      "import { mapGetters } from 'vuex'",
+      "",
+      "export default {",
+      "\tcomputed: {",
+      "\t\t...mapGetters([",
+      "\t\t\t${1:'nameOfGetter'},",
+      "\t\t])",
+      "\t},",
+      "}"
+    ],
+    "description": "mapgetters inside a vue component"
+  },
+  "Vue MapMutations": {
+    "prefix": "vmapmutations",
+    "body": [
+      "import { mapMutations } from 'vuex'",
+      "",
+      "export default {",
+      "\tmethods: {",
+      "\t\t...mapMutations([",
+      "\t\t\t${1:'nameOfMutation'}, //also supports payload `this.nameOfMutation(amount)` ",
+      "\t\t])",
+      "\t},",
+      "}"
+    ],
+    "description": "mapmutations inside a vue component"
+  },
+  "Vue MapActions": {
+    "prefix": "vmapactions",
+    "body": [
+      "import { mapActions } from 'vuex'",
+      "",
+      "export default {",
+      "\tmethods: {",
+      "\t\t...mapActions([",
+      "\t\t\t${1:'nameOfAction'}, //also supports payload `this.nameOfAction(amount)` ",
+      "\t\t])",
+      "\t},",
+      "}"
+    ],
+    "description": "mapactions inside a vue component"
   },
   "Vue Filter": {
     "prefix": "vfilter",
@@ -194,5 +294,20 @@
       "})"
     ],
     "description": "unit test component"
+  },
+  "Vue.config.js Import": {
+    "prefix": "vconfig",
+    "body": [
+      "module.exports = {",
+      "\tcss: {",
+      "\t\tloaderOptions: {",
+      "\t\t\t${1:sass}: {",
+      "\t\t\t\tdata: `${2:@import '@/styles/_variables.scss';}`",
+      "\t\t\t}",
+      "\t\t}",
+      "\t}",
+      "}"
+    ],
+    "description": "vue.config.js"
   }
 }
